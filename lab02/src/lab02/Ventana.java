@@ -1,21 +1,35 @@
 package lab02;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 
 public class Ventana {
+public static void main(String[] args) {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-	
-		JFrame frame = new JFrame();
-	    JLabel label = new JLabel();
-	    label.setText("Titel Label");
-	    frame.add(label);
-		frame.setTitle("Windor");
-		frame.setSize(1360,768);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-	}
+JFrame frame = new JFrame();
+JLabel label = new JLabel();
+label.setText("Hola soy una Label");
+frame.add(label);
+JButton button = new JButton();
+button.setText("Presioname!");
+button.addActionListener(new ActionListener(){
+@Override
+public void actionPerformed(ActionEvent e) {
+JOptionPane.showMessageDialog(null, "PRESIONADO");
+}});
+frame.add(button);
+frame.setTitle("Mi segunda ventana");
+frame.setSize(800, 600);
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+frame.setVisible(true);
 
+
+
+}
 }
